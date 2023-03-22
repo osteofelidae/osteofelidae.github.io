@@ -1,0 +1,135 @@
+/* https://coolors.co/a63a50-f0e7d8-ab9b96-a1674a-ba6e6e-c07b7b */
+
+::selection {
+
+  background: #625041; /* WebKit/Blink Browsers */
+  color: #F0E7D8;
+
+}
+
+::-moz-selection {
+
+  background: #625041; /* Gecko Browsers */
+  color: #F0E7D8;
+
+}
+
+
+
+@keyframes title_fade_in {
+
+	from {
+
+		width: 0;
+
+	}
+
+	to {
+
+		width: 100%;
+
+	}
+
+}
+
+@keyframes text_fade_in {
+
+	from {
+
+		color: #F0E7D8;
+
+	}
+
+}
+
+@keyframes dividers_fade_in {
+
+	from {
+
+		border-top: 3px dashed #F0E7D8;
+		border-bottom: 3px dashed #F0E7D8;
+
+	}
+
+}
+
+body {
+
+	font-family: 'Lucida Grande', monospace;
+	background-color: #F0E7D8;
+	margin:30px;
+
+}
+
+div {
+
+	animation-name: title_fade_in;
+
+}
+
+hr.dashed {
+
+	border-top: 3px dashed #A1674A;
+	border-bottom: 3px dashed #A1674A;
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+	animation-name: dividers_fade_in;
+	animation-duration: 3s;
+	overflow:hidden;
+	white-space: nowrap;
+
+}
+
+.title {
+
+	color: #A63A50;
+	font-size: 70px;
+	font-weight: normal;
+
+	animation-name: title_fade_in;
+	animation-duration: 2s;
+	overflow:hidden;
+
+
+}
+
+.subtitle {
+
+	color: #AB9B96;
+	font-size: 25px;
+	font-style: italic;
+
+	animation-name: title_fade_in;
+	animation-duration: 2.5s;
+	overflow:hidden;
+	white-space: nowrap;
+
+}
+
+.section_header {
+
+	color: #A45151;
+	font-size: 20px;
+	font-weight: normal;
+	text-decoration: underline;
+
+	animation-name: title_fade_in;
+	animation-duration: 3s;
+	overflow:hidden;
+	white-space: nowrap;
+
+
+}
+
+.content {
+
+	color: #BA6E6E;
+	font-size: 15px;
+
+	animation-name: title_fade_in;
+	animation-duration: 3.5s;
+	overflow:hidden;
+	white-space: nowrap;
+
+}
