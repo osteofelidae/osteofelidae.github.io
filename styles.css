@@ -36,7 +36,7 @@
 
 	from {
 
-		color: #F0E7D8;
+		color: #3A2E39;
 
 	}
 
@@ -46,17 +46,23 @@
 
 	from {
 
-		border-top: 3px dashed #F0E7D8;
-		border-bottom: 3px dashed #F0E7D8;
+		border-top: 3px dashed #3A2E39;
+		border-bottom: 3px dashed #3A2E39;
 
 	}
+
+}
+
+h1 span { 
+
+    background-color: #F3CFBB; 
 
 }
 
 body {
 
 	font-family: 'Lucida Grande', monospace;
-	background-color: #F0E7D8;
+	background-color: #3A2E39;
 	margin:30px;
 
 }
@@ -69,8 +75,8 @@ div {
 
 hr.dashed {
 
-	border-top: 3px dashed #A1674A;
-	border-bottom: 3px dashed #A1674A;
+	border-top: 3px dashed #F1C5A8;
+	border-bottom: 3px dashed #F1C5A8;
 	margin-top: 50px;
 	margin-bottom: 50px;
 
@@ -83,7 +89,7 @@ hr.dashed {
 
 .title {
 
-	color: #A63A50;
+	color: #3A2E39;
 	font-size: 70px;
 	font-weight: normal;
 
@@ -96,7 +102,7 @@ hr.dashed {
 
 .subtitle {
 
-	color: #AB9B96;
+	color: #A63A50;
 	font-size: 25px;
 	font-style: italic;
 
@@ -109,7 +115,7 @@ hr.dashed {
 
 .section_header {
 
-	color: #A45151;
+	color: #EDB183;
 	font-size: 20px;
 	font-weight: normal;
 	text-decoration: underline;
@@ -124,7 +130,7 @@ hr.dashed {
 
 .content {
 
-	color: #BA6E6E;
+	color: #F4D8CD;
 	font-size: 15px;
 
 	animation-name: title_fade_in;
