@@ -1,3 +1,5 @@
+/* https://coolors.co/efc69b-af1b3f-473144-ccb69b-df9b6d */
+
 /* VARIABLES */
 :root {
 
@@ -7,6 +9,10 @@
 	/* Page title */
 	--title_text_color: #CED0CE;
 	--title_background_color: #473144;
+
+	/* Caption */
+	--caption_text_color: #7B2642;
+
 
 	/* Page subtitle */
 	--subtitle_text_color: #CED0CE;
@@ -27,7 +33,7 @@
 
 	/* Selected text */
 	--selection_text_color: #191919;
-	--selection_background_color: #AF1B3F;
+	--selection_background_color: #CF716D;
 
 }
 
@@ -236,6 +242,27 @@ a:not(:hover) {
 	animation: highlight_text 1s ease-out 1, 
 			   reveal_text 1s ease-out 1;
 	animation-fill-mode: both;
+
+}
+
+/* Caption (pronouns) */
+.caption {
+
+	/* Font */
+	color: var(--caption_text_color);
+	font-size: 15px;
+
+	/* Overflow */
+	overflow: hidden;
+	white-space: nowrap;
+
+	/* Animation */
+	animation: reveal_text 1s 0.3s ease-out 1;
+	animation-fill-mode: both;
+
+	/* Margins */
+	margin-top: 0px;
+	margin-bottom: 0px;
 
 }
 
