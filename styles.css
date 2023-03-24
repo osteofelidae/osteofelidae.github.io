@@ -1,29 +1,86 @@
-/* https://coolors.co/a63a50-f0e7d8-ab9b96-a1674a-ba6e6e-c07b7b not anymore bitch*/
+/* VARIABLES */
+:root {
 
-::selection {
+	/* Defaults */
+	--background_color: #191919;
 
-  background: #625041; /* WebKit/Blink Browsers */
-  color: #F0E7D8;
+	/* Page title */
+	--title_text_color: #CED0CE;
+	--title_background_color: #473144;
+
+	/* Page subtitle */
+	--subtitle_text_color: #CED0CE;
+
+	/* Section header */
+	--section_header_text_color: #E6E8E6;
+
+	/* Default text */
+	--content_text_color: #FFFFFF;
+
+	/* Dividers */
+	--divider_text_color: #CED0CE;
+
+	/* Link color */
+	--link_normal_text_color: #EFC69B;
+	--link_highlight_text_color: #FFFFFF;
+	--link_highlight_background_color: #AF1B3F;
+
+	/* Selected text */
+	--selection_text_color: #191919;
+	--selection_background_color: #AF1B3F;
 
 }
 
-::-moz-selection {
-
-  background: #625041; /* Gecko Browsers */
-  color: #F0E7D8;
-
-}
 
 
+/* ANIMATIONS */
 
-@keyframes title_fade_in {
+/* Hide element for certain amount of time */
+@keyframes hide_delay {
 
-	from {
+	/* Start */
+	0% {
 
-		width: 0;
+		/* Hide element */
+		visibility: hidden;
 
 	}
 
+	/* Just before start */
+	99% {
+
+		/* All color same as background */
+		visibility: hidden;
+
+	}
+
+	/* When animation ends, element becomes visible */
+
+}
+
+/* Hightlight text */
+@keyframes highlight_text {
+
+	/* Start */
+	from {
+
+		background-color: transparent;
+
+	}
+
+}
+
+/* Reveal text from left */
+@keyframes reveal_text {
+
+	/* Start */
+	from {
+
+		width: 0%;
+
+	}
+
+	/* End */
 	to {
 
 		width: 100%;
@@ -32,110 +89,224 @@
 
 }
 
-@keyframes text_fade_in {
+/* Fade in */
+@keyframes fade_in {
 
+	/* Start */
 	from {
 
-		color: #3A2E39;
+		opacity: 0%;
+
+	}
+
+	/* End */
+	to {
+
+		opacity: 100%;
 
 	}
 
 }
 
-@keyframes dividers_fade_in {
+/* Link highlight */
+@keyframes link_highlight {
 
+	/* Start */
 	from {
 
-		border-top: 3px dashed #3A2E39;
-		border-bottom: 3px dashed #3A2E39;
+		background-color: inherit;
+		color: var(--link_normal_text_color);
+
+	}
+
+	/* End */
+	to {
+
+		background-color: var(--link_highlight_background_color);
+		color: var(--link_highlight_text_color);
 
 	}
 
 }
 
-h1 span { 
+/* Undo link highlight */
+@keyframes undo_link_highlight {
 
-    background-color: #F3CFBB; 
+	/* Start */
+	from {
+
+		background-color: var(--link_highlight_background_color);
+		color: var(--link_highlight_text_color);
+
+	}
+
+	/* End */
+	to {
+
+		background-color: inherit;
+		color: var(--link_normal_text_color);
+
+	}
 
 }
 
-body {
 
+/* REACTIVE */
+::selection {
+
+	/* Color */
+	background: var(--selection_background_color);
+	color: var(--selection_text_color);
+
+}
+
+
+
+
+/* DEFAULTS */
+
+/* Body */
+* {
+
+	/* Font */
 	font-family: 'Lucida Grande', monospace;
-	background-color: #3A2E39;
-	margin:30px;
+
+	/* Background */
+	background-color: var(--background_color);
+
+	/* Spacing */
+	margin:10px;
+
+	/* Animations */
+	animation-fill-mode: forwards;
 
 }
 
-div {
+/* Span */
+span {
 
-	animation-name: title_fade_in;
-
-}
-
-hr.dashed {
-
-	border-top: 3px dashed #F1C5A8;
-	border-bottom: 3px dashed #F1C5A8;
-	margin-top: 50px;
-	margin-bottom: 50px;
-
-	animation-name: dividers_fade_in;
-	animation-duration: 3s;
-	overflow:hidden;
-	white-space: nowrap;
+	/* Display */
+	display: inline-block;
+	overflow: hidden;
 
 }
 
+/* Link */
+a {
+
+	/* Font */
+	color: var(--link_normal_text_color);
+	
+
+}
+
+/* Link hover */
+a:hover {
+
+	/* Animation */
+	animation: link_highlight 0.075s linear;
+	animation-fill-mode: forwards;
+}
+
+/* Link unhover */
+a:not(:hover) {
+
+	/* Animation */
+	animation: undo_link_highlight 0.075s linear;
+	animation-fill-mode: forwards;
+	
+
+
+}
+
+
+
+/* CLASSES */
+
+/* Page title */
 .title {
 
-	color: #3A2E39;
+	/* Font */
+	color: var(--title_text_color);
 	font-size: 70px;
 	font-weight: normal;
+	background-color: var(--title_background_color);
 
-	animation-name: title_fade_in;
-	animation-duration: 2s;
-	overflow:hidden;
-
+	/* Animation */
+	animation: highlight_text 1s ease-out 1, 
+			   reveal_text 1s ease-out 1;
+	animation-fill-mode: both;
 
 }
 
+/* Page subtitles */
 .subtitle {
 
-	color: #A63A50;
+	/* Font */
+	color: var(--subtitle_text_color);
 	font-size: 25px;
 	font-style: italic;
 
-	animation-name: title_fade_in;
-	animation-duration: 2.5s;
-	overflow:hidden;
+	/* Overflow */
+	overflow: hidden;
 	white-space: nowrap;
+
+	/* Animation */
+	animation: reveal_text 1s 0.25s ease-out 1;
+	animation-fill-mode: both;
 
 }
 
+/* Section header */
 .section_header {
 
-	color: #EDB183;
+	/* Font */
+	color: var(--section_header_text_color);
 	font-size: 20px;
 	font-weight: normal;
 	text-decoration: underline;
 
-	animation-name: title_fade_in;
-	animation-duration: 3s;
-	overflow:hidden;
+	/* Overflow */
+	overflow: hidden;
 	white-space: nowrap;
 
+	/* Animation */
+	animation: reveal_text 1s 0.75s ease-out 1;
+	animation-fill-mode: both;
 
 }
 
+/* Default text */
 .content {
 
-	color: #F4D8CD;
+	/* Font */
+	color: var(--content_text_color);
 	font-size: 15px;
+	line-height: 1.5;
 
-	animation-name: title_fade_in;
-	animation-duration: 3.5s;
-	overflow:hidden;
+	/* Overflow */
+	overflow: hidden;
 	white-space: nowrap;
+
+	/* Animation */
+	animation: reveal_text 1s 1s ease-out 1;
+	animation-fill-mode: both;
+
+}
+
+/* Dividers */
+.divider {
+
+	/* Color */
+	border-top: 3px dashed var(--divider_text_color);
+	border-bottom: 3px var(--divider_text_color);
+
+	/* Spacing */
+	margin-top: 50px;
+	margin-bottom: 50px;
+
+	/* Animation */
+	animation: fade_in 1s 0.5s ease-out 1;
+	animation-fill-mode: both;
 
 }
