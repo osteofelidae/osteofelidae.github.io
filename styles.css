@@ -86,12 +86,21 @@ body {
 }
 
 /* SPAN BLOCK */
+
+/*
 .one-half {
 
 	width: 25em;
 	
 
 }
+.one-third {
+	
+	width: 50em;
+
+}
+*/
+
 .dashed {
 	border-style: dashed;
 }
@@ -122,39 +131,47 @@ a:hover {
 	}
 }
 #title {
-	
 	width: 75%;
 	margin-left: 12%;
 	margin-top: 2%;
 	animation: fade 1s linear 0s;
 	animation-fill-mode: both;
-
 }
 #divider {
-	margin-top: 2%;
+	margin-top: 1%;
 	margin-left: 10%;
 	margin-right: 10%;
 	border: var(--divider-width) dashed var(--divider-color);
 	animation: fade 1s linear 0.25s;
 	animation-fill-mode: both;
 }
-#socials {
-	margin-top: 2%;
+#about {
+	margin-top: 1%;
 	margin-left: 17%;
 	animation: fade 1s linear 0.5s;
 	animation-fill-mode: both;
+	width: 50em;
+}
+#socials {
+	margin-top: 1%;
+	margin-left: 22%;
+	animation: fade 1s linear 0.5s;
+	animation-fill-mode: both;
+	width: 20em;
 }
 #languages {
-	margin-top: 3%;
-	margin-left: 22%;
+	margin-top: 1%;
+	margin-left: 27%;
 	animation: fade 1s linear 0.75s;
 	animation-fill-mode: both;
+	width: 17em;
 }
 #programming {
-	margin-top: 3%;
-	margin-left: 27%;
+	margin-top: 1%;
+	margin-left: 32%;
 	animation: fade 1s linear 1s;
 	animation-fill-mode: both;
+	width: 25em;
 }
 
 /* FONT SIZES */
@@ -163,6 +180,7 @@ a:hover {
 }
 .medium {
 	font-size: var(--medium-font-size);
+	text-decoration: underline dotted;
 }
 .small {
 	font-size: var(--small-font-size);
