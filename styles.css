@@ -155,21 +155,21 @@ a:hover {
 #socials {
 	margin-top: 1%;
 	margin-left: 22%;
-	animation: fade 1s linear 0.5s;
+	animation: fade 1s linear 0.75s;
 	animation-fill-mode: both;
 	width: 20em;
 }
 #languages {
 	margin-top: 1%;
 	margin-left: 27%;
-	animation: fade 1s linear 0.75s;
+	animation: fade 1s linear 1s;
 	animation-fill-mode: both;
 	width: 17em;
 }
 #programming {
 	margin-top: 1%;
 	margin-left: 32%;
-	animation: fade 1s linear 1s;
+	animation: fade 1s linear 1.25s;
 	animation-fill-mode: both;
 	width: 25em;
 }
