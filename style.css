@@ -1,4 +1,5 @@
 body {
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
 }
@@ -7,6 +8,7 @@ body {
     scroll-snap-type: y proximity;
     overflow: scroll;
     height: 100vh;
+    scroll-behavior: smooth;
 }
 
 .page {
@@ -71,6 +73,12 @@ body {
 .content-page > ul > li {
     font-size: 1.5vw;
     color: #242424;
+}
+a {
+    color: #242424;
+}
+img {
+    width: 100%;
 }
 
 @media (max-width: 768px) {
