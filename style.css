@@ -1,111 +1,178 @@
+/* base */
+
 body {
-    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
+    scroll-behavior: smooth;
 }
 
 .container {
-    scroll-snap-type: y proximity;
-    overflow: scroll;
     height: 100vh;
+    overflow: scroll;
     scroll-behavior: smooth;
+    transition: scroll-top 0.3s ease;
 }
 
 .page {
     width: 100vw;
     min-height: 100vh;
     margin: 0;
-    /*background-color: lime;*/
     display: flex;
     justify-content: center;
     align-items: center;
     scroll-snap-align: center;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
 }
 
+/* Cover page */
 .cover-page {
+    padding: 0;
     background-image: url("assets/cover-bg.png");
     background-size: cover;
     background-position: bottom center;
-    background-blend-mode: multiply;
     background-color: darkslategray;
-    padding: 0;
+    background-blend-mode: multiply;
 }
+
 .cover-page-overlay {
+    width: 75%;
+    text-align: center;
     background-color: black;
     color: lightgray;
     mix-blend-mode: screen;
-
-    width: 75%;
-
-    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.cover-page-overlay:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
 .cover-page-overlay > h1 {
-    margin: 0vw 0px 2vw 0px;
+    margin: 0 0 2vw 0;
     padding: 0;
     font-size: 8vw;
     line-height: 8vw;
 }
+
 .cover-page-overlay > h2 {
-    margin: 2vw 0px 0vw 0px;
+    margin: 2vw 0 0 0;
     font-size: 2vw;
     line-height: 2vw;
 }
 
+/* Content page */
+
 .content-page-background {
     background-color: #f0f0f0;
 }
+
 .content-page {
     width: 80%;
-    /*background-color: red;*/
-    background-color: #f0f0f0;
-    padding: 1vw;
+    padding: 5vw;
     margin: 5vw;
+    background-color: transparent;
+    border: 5px dotted;
+    scroll-snap-type: y proximity;
 }
+
 .content-page > h1 {
     font-size: 4vw;
     color: #363636;
 }
+
 .content-page > p {
     font-size: 1.75vw;
     color: #242424;
 }
 
-.content-page > ul > li {
+.content-page > ul > li,
+.content-page ul li {
     font-size: 1.5vw;
     color: #242424;
+    opacity: 0;
+    animation: fadeInItem 0.4s ease-out forwards;
 }
+
+/* Links & images */
+
 a {
     color: #242424;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
 }
+
+a:hover {
+    color: #4a4a4a;
+    transform: translateX(4px);
+}
+
+a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: #4a4a4a;
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
 img {
     width: 100%;
     object-fit: contain;
 }
 
+/* Animation delays */
+
+.page:nth-child(1) { animation-delay: 0.1s; }
+.page:nth-child(2) { animation-delay: 0.2s; }
+.page:nth-child(3) { animation-delay: 0.3s; }
+.page:nth-child(4) { animation-delay: 0.4s; }
+.page:nth-child(5) { animation-delay: 0.5s; }
+
+.content-page ul li:nth-child(1) { animation-delay: 0.1s; }
+.content-page ul li:nth-child(2) { animation-delay: 0.2s; }
+.content-page ul li:nth-child(3) { animation-delay: 0.3s; }
+.content-page ul li:nth-child(4) { animation-delay: 0.4s; }
+.content-page ul li:nth-child(5) { animation-delay: 0.5s; }
+
+/* Keyframes */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInItem {
+    from { opacity: 0; transform: translateX(-10px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Media queries */
 @media (max-width: 768px) {
     .cover-page-overlay > h1 {
-        margin: 0vw 0px 2vw 0px;
+        margin: 0 0 2vw 0;
         padding: 0;
         font-size: 12vw;
         line-height: 12vw;
     }
+
     .cover-page-overlay > h2 {
-        margin: 2vw 0px 0vw 0px;
+        margin: 2vw 0 0 0;
         font-size: 3vw;
         line-height: 3vw;
     }
 
-    .content-page > h1 {
-        font-size: 12vw;
-        color: #363636;
-    }
-    .content-page > p {
-        font-size: 4vw;
-        color: #242424;
-    }
-
-    .content-page > ul > li {
-        font-size: 3.5vw;
-        color: #242424;
-    }
+    .content-page > h1 { font-size: 12vw; }
+    .content-page > p  { font-size: 4vw; }
+    .content-page > ul > li { font-size: 3.5vw; }
 }

@@ -2,13 +2,21 @@
     <head>
         <title>Albert Kim</title>
         <link href="style.css" rel="stylesheet" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    /* Ensure animations don't cause layout shift */
+    .page {
+        will-change: transform, opacity;
+    }
+</style>
     </head>
     <body>
         <div class="container">
             <div class="page cover-page">
                 <div class="cover-page-overlay">
                     <h1>Albert Kim</h1>
-                    <h2>Low-level & Operating Systems enthusiast</h2>
+                    <h2>Programming generalist</h2>
                 </div>
             </div>
 
@@ -20,11 +28,6 @@
                             <li><a href="#aboutme">About me</a></li>
                             <li><a href="#contactme">Contact me</a></li>
                             <li><a href="#hireme">Hire me!</a></li>
-                            <li>Projects
-                                <ul>
-                                    <li><a href="#projects-mydotfiles">Dotfiles</a></li>
-                                </ul>
-                            </li>
                         </ul>
                     </p>
                 </div>
@@ -34,21 +37,21 @@
                 <div class="content-page">
                     <h1>About Me</h1>
                     <p>
-                        Hello! I'm Alby, an undergrad in Computer Science. I've
+                        Hello! I'm Alby, an Master's student in Computer Science. I've
                         been coding since I was seven, and enjoy all things
                         programming!
                     </p>
                     <p>
-                        In particular, I love doing low-level/OS stuff - for
-                        example, I maintain my own distribution of Arch Linux
-                        and use it as my daily driver! I also dabble in AI/ML
-                        and web development - I created this website without
-                        frameworks for fun!
+                        Tools and languages can be learned, but logic and design patterns
+                        are the same everywhere. I've been programming long enough that
+                        I can pick up new languages and frameworks on-the-fly. My strengths 
+                        are low-level/operating systems and research computing, but I have
+                        dabbled in everything from web development to data analysis.
                     </p>
                     <p>
                         Outside of CS, I'm an avid enjoyer of books and video
-                        games galore, particularly high fantasy and sci-fi. Ask
-                        me about my WuWa account!
+                        games galore, particularly high fantasy and sci-fi. Currently, I'm
+                        working through my first playthrough of X4: Foundations!
                     </p>
                 </div>
             </div>
@@ -67,14 +70,9 @@
                 <div class="content-page">
                     <h1>Hire me!</h1>
                     <p>
-                        I need more money to buy graphics cards, and you
-                        need a dependable software engineer. Sounds like a win-win to me!
-                    </p>
-                    <br />
-                    <p>
                         <b>What I'm great at:</b>
                         <ul>
-                            <li><b>Languages:</b> C/C++, Python, learning new languages fast!</li>
+                            <li><b>Languages:</b> C/C++, Python, Bash, learning new languages fast!</li>
                             <li><b>Libraries/Technologies:</b> Linux, PyTorch, TensorFlow/Keras</li>
                         </ul>
                     </p>
@@ -88,15 +86,6 @@
                     </p>
                     <br />
                     <p><a href="assets/resume.pdf">My full resume :)</a></p>
-                </div>
-            </div>
-
-            <div class="page content-page-background" id="projects-mydotfiles">
-                <div class="content-page">
-                    <h1>My Dotfiles</h1>
-                    <p>My dotfiles. This is a small part of my Arch-based distro; my scripts are platform-specific and there is not much point including them here. The dotfiles that <i>are</i> included are for ricing and some common programs (eg. sublime text.)</p>
-                    <img width="100%" src="https://github.com/osteofelidae/dotfiles/raw/main/preview.png?raw=true">
-                    <p><b>Repo:</b> <a href="https://github.com/osteofelidae/dotfiles">https://github.com/osteofelidae/dotfiles</a></p>
                 </div>
             </div>
         </div>
